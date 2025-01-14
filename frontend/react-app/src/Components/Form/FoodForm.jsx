@@ -2,7 +2,19 @@ import React, { useEffect, useState } from 'react' ;
 
 const url = "http://localhost:3000/api/v1/food/getFood"
 
-const FoodForm = () => {
+// const FoodForm = () => {
+//   const [foodItem , setFood ] = useState({
+//     name : "" ,
+//     image: " ",
+//     price : " "
+//   })
+//   const handleFood = async ()=>{
+//     try {
+//       const {success , message } =  await 
+//     } catch (error) {
+      
+//     }
+//   }
 const [getApi , setGetApi ] = useState([]);
 
 const fetchApi = async ()=>{
@@ -16,6 +28,10 @@ useEffect(()=>{
 } , [])
   return (
     <>
+    <form>
+      <label>Enter the food name</label>
+      <input type="text" />
+    </form>
     </>
   )
 }
