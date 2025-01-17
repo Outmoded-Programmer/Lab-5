@@ -1,38 +1,28 @@
-import React, { useEffect, useState } from 'react' ;
+import React, { useEffect, useState } from 'react'
+import Axios from 'axios'
 
-const url = "http://localhost:3000/api/v1/food/getFood"
+const url = 'http://localhost:5000/api/v1/food/getFood'
 
-// const FoodForm = () => {
-//   const [foodItem , setFood ] = useState({
-//     name : "" ,
-//     image: " ",
-//     price : " "
-//   })
-//   const handleFood = async ()=>{
-//     try {
-//       const {success , message } =  await 
-//     } catch (error) {
-      
-//     }
-//   }
-const [getApi , setGetApi ] = useState([]);
+const FoodForm = () => {
+  const [getApi , setGetApi] = useState([]) ;
 
-const fetchApi = async ()=>{
- const fetchData = await fetch(url) 
- const data = await fetchData
- console.log("data = " , data)
-}
+  const getData = async()=>{ 
+    try{
+      const res = await Axios.get(url);
+      const resData = await JSON.stringify(res); 
+      setGetApi(resData);
+    } catch(error){
+      console.log(error.message)
+    }
+    }
 
-useEffect(()=>{
-  fetchApi()
-} , [])
+  useEffect(()=>{
+    getData();
+  }, [getApi])
+
   return (
-    <>
-    <form>
-      <label>Enter the food name</label>
-      <input type="text" />
-    </form>
-    </>
+    <div>
+      <h1>Food{getApi}</h1></div>
   )
 }
 

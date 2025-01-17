@@ -1,9 +1,9 @@
-import FoodFormSubmit from "./Components/Form/FoodForm.jsx"
+import FoodForm from "./Components/Form/FoodForm";
 
 function App() {
   return (
 <>
-<FoodFormSubmit/>
+<FoodForm/>
 </>
   );
 }

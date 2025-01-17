@@ -7,9 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cors({
-    origin: "http://localhost:3000/",
+    origin: "http://localhost:3000",
     method:['GET' , 'POST' , 'PUT' , 'Delete'] ,
 }))
+
 
 const port = process.env.PORT 
 const foodRoute = require('./routes/foodRoute.js')
