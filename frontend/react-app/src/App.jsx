@@ -1,9 +1,9 @@
-import FoodForm from "./Components/Form/FoodForm";
+import FoodMenu from "./Components/Form/FoodMenu";
 
 function App() {
   return (
 <>
-<FoodForm/>
+<FoodMenu/>
 </>
   );
 }

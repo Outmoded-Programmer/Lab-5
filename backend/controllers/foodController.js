@@ -21,7 +21,7 @@ const addFood = async (req  , res ) =>{
 const getFood = async (req , res )=>{
     try{
         const food = await Food.find();
-        res.status(200).json({success: true , data: food});
+        res.status(200).json(food);
     }catch(error){
         console.log('Error: ' , error);
         res.status(500).json({success: false  , message:"internal server error"});
