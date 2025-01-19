@@ -3,8 +3,8 @@ const Food = require('../models/foodModel.js');
 
 //enter the category 
 const addCategory = async (req , res )=>{
-    const {name , foods } = req.body ;
-    const category = new Category({name , foods});
+    const {name , food } = req.body ;
+    const category = new Category({name , food});
     try{
         const saveCategory = await category.save();
         res.status(201).json({success: true , data: saveCategory});
