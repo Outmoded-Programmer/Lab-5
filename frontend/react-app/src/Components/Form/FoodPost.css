@@ -62,22 +62,23 @@
 }
 
 .side-preview {
-  padding-top: 10%;
-  /* margin-left: 18%; */
+  padding-top: 9%;
+  margin-left: 10%;
   flex-basis: 30%;
-  border-left: 1px solid red;
+  width: 100%;
+  text-align: center;
 }
-.card-h2{
-  margin-left: 50%;
+.card-h2 {
+  margin-left: 0%;
 }
 .card {
   border: 1px solid transparent;
-  top: 34%;
-  left: 62%;
-  padding: 0 0 ;
+  top: 55%;
+  left: 64%;
+  padding: 0 0;
   width: 23%;
   height: 60vh;
-  box-shadow: 4px 4px 4px 4px silver  ;
+  box-shadow: 4px 4px 4px 4px silver;
   position: absolute;
 }
 .image-preview {
@@ -89,11 +90,11 @@
   padding: 0 0 8px;
   margin-bottom: 2%;
 }
-.icon{
+.icon {
   margin-top: 10%;
   font-size: 50px;
 }
-.price-preview{
+.price-preview {
   z-index: 10000;
   border: 1px solid transparent;
   padding: 10px 8px;
@@ -101,17 +102,13 @@
   margin-top: 5%;
   margin-bottom: 3%;
 }
-.price-preview h3{
+.price-preview h3 {
   font-size: 16px;
   font-weight: 500;
   position: relative;
-
-
-
 }
 .name-preview {
   position: relative;
-
   padding: 6px 8px;
   margin: 8px 0px;
   border: 1px solid transparent;
