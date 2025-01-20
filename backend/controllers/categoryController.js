@@ -16,7 +16,7 @@ const addCategory = async (req , res )=>{
 
 const getCategory = async (req , res)=>{
     try{
-       const category = await Category.find();
+       const category = await Category.find().populate("food");
        res.status(200).json({success:true , data: category})
 
     }catch(error){

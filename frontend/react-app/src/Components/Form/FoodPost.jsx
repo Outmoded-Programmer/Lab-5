@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./FoodPost.css";
 import { ToastContainer, toast } from "react-toastify";
+import { BiImageAdd } from "react-icons/bi";
 
 const url = "http://localhost:5000/api/v1/food/addFood";
 const FoodPost = () => {
@@ -91,11 +92,17 @@ const FoodPost = () => {
         <div className="side-preview">
           <h2 className="foodPost-heading card-h2">Food Preview</h2>
           <div className="card">
-            <div className="image-preview">
+            <div className="image-preview text-center">
               {foodItem.image ? (
-                <img src={foodItem.image} alt="food-image" width={"100%"} height={"100%"} className="rounded-top"/>
+                <img
+                  src={foodItem.image}
+                  alt="food-image"
+                  width={"100%"}
+                  height={"100%"}
+                  className="rounded-top"
+                />
               ) : (
-                "image url"
+                <BiImageAdd className="icon" />
               )}
             </div>
             <div className="name-preview">
@@ -109,10 +116,12 @@ const FoodPost = () => {
               {foodItem.price ? (
                 <h3 className="food-price">Rs.{foodItem.price}</h3>
               ) : (
-               `Price :${foodItem.price}`
+                `Price :${foodItem.price}`
               )}
             </div>
-            <button className="addFood-btn" disabled>Add Order</button>
+            <button className="addFood-btn" disabled>
+              Add Order
+            </button>
           </div>
         </div>
       </div>
