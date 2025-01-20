@@ -54,7 +54,7 @@ const FoodPost = () => {
   };
   return (
     <>
-      <div className="post-food">
+      <div className="d-flex flex-wrap">
         <div className="data-entry">
           <h2 className="foodPost-heading">Enter Food details</h2>
           <form className="form-data" action="" onSubmit={handleSubmit}>
@@ -89,11 +89,11 @@ const FoodPost = () => {
           <ToastContainer />
         </div>
         <div className="side-preview">
-          <h2 className="foodPost-heading">Food Preview</h2>
+          <h2 className="foodPost-heading card-h2">Food Preview</h2>
           <div className="card">
             <div className="image-preview">
               {foodItem.image ? (
-                <img src={foodItem.image} alt="food-image" />
+                <img src={foodItem.image} alt="food-image" width={"100%"} height={"100%"} className="rounded-top"/>
               ) : (
                 "image url"
               )}
@@ -107,11 +107,12 @@ const FoodPost = () => {
             </div>
             <div className="price-preview">
               {foodItem.price ? (
-                <h3 className="food-price">{foodItem.price}</h3>
+                <h3 className="food-price">Rs.{foodItem.price}</h3>
               ) : (
-                `Price Rs:${foodItem.price}`
+               `Price :${foodItem.price}`
               )}
             </div>
+            <button className="addFood-btn" disabled>Add Order</button>
           </div>
         </div>
       </div>
