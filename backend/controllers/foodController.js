@@ -8,7 +8,7 @@ const addFood = async (req  , res ) =>{
     const {name , image , price } = req.body;
     const food = new Food ({
         name , price , image
-    })
+})
     try{
        const saveFood = await food.save();
        res.status(201).json(saveFood)
@@ -21,6 +21,9 @@ const addFood = async (req  , res ) =>{
 const getFood = async (req , res )=>{
     try{
         const food = await Food.find();
+        if(!Array.isArray(food)){
+            food = [food]
+        }
         res.status(200).json(food);
     }catch(error){
         console.log('Error: ' , error);

@@ -15,10 +15,12 @@ app.use(cors({
 const port = process.env.PORT 
 const foodRoute = require('./routes/foodRoute.js')
 const categoryRoute = require('./routes/categoryRoute.js')
+const tableBookingRoute = require('./routes/tableBookingRoute.js')
 
 
 app.use('/api/v1/food' , foodRoute );
 app.use('/api/v1/category' , categoryRoute)
+app.use('/api/v1/reservation' , tableBookingRoute)
 
 app.listen(port , ()=>{
     console.log(`The server is running succesfully on port ${port} `)

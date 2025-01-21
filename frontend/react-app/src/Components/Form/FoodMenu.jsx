@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-// import Axios from 'axios'
+import Axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const url = 'http://localhost:5000/api/v1/food/getFood'
@@ -7,29 +7,29 @@ const url = 'http://localhost:5000/api/v1/food/getFood'
 const FoodMenu = () => {
   const [getApi, setGetApi] = useState([]);
 
-  // const getData = async () => {
-  //   try {
-  //     const res = await Axios.get(url);
-  //     setGetApi(res);
-  //   } catch (error) {
-  //     console.log(error.message)
-  //   }
-  // }
-  // useEffect(()=>{
-  //   getData()
-  // } , [])
-  useEffect(() => {
-    const FetchData = async () => {
-      try {
-        const response = await fetch(url)
-        const res = await response.json()
-        setGetApi(res)
-      } catch (error) {
-        console.log(error.message)
-      }
+  const getData = async () => {
+    try {
+      const res = await Axios.get(url);
+      setGetApi(res.data);
+    } catch (error) {
+      console.log(error.message)
     }
-    FetchData();
-  }, [])
+  }
+  useEffect(()=>{
+    getData()
+  } , [])
+  // useEffect(() => {
+  //   const FetchData = async () => {
+  //     try {
+  //       const response = await fetch(url)
+  //       const res = await response.json()
+  //       setGetApi(res)
+  //     } catch (error) {
+  //       console.log(error.message)
+  //     }
+  //   }
+  //   FetchData();
+  // }, [])
   console.log(getApi)
 
   return (
