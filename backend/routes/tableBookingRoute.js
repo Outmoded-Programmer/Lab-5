@@ -1,9 +1,10 @@
 const express = require('express');
-const { postUser } = require('../controllers/tableBookingController');
+const { postReservation, getReservation } = require('../controllers/tableBookingController.js');
 const router = express.Router();
 
 
-router.post('/postReservation' , postUser)
+router.post('/postReservation' , postReservation)
+router.post('/getReservation' , getReservation)
 
 
 module.exports = router

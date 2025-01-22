@@ -1,7 +1,7 @@
-const RservationModel = require("../models/tableBooking.js");
+const Reservation = require("../models/tableBooking.js");
 
-const postUser = async (req  , res) => {
-  const { name, email, phone, noOfPeople, noOfTable, date, createdAt } =
+const postReservation = async (req  , res) => {
+  const { name, email, phone, noOfPeople, noOfTable, date } =
     req.body
     const reserve = new Reservation({
         name, email, phone, noOfPeople, noOfTable, date
@@ -17,7 +17,7 @@ const postUser = async (req  , res) => {
 
 //Get Method 
 
-const getUser = async (req  , res)=>{
+const getReservation = async (req  , res)=>{
     try{
         const Reserve = Reservation.find();
         res.status(200).json({success: true , body: Reserve})
@@ -28,4 +28,4 @@ const getUser = async (req  , res)=>{
 }
 
 
-module.exports = {postUser , getUser}
+module.exports = {postReservation , getReservation}
