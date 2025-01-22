@@ -12,6 +12,7 @@ const Registration = () => {
     })
   return (
     <>
+    <input type="date" name="" id="" />
     </>
     )
 }

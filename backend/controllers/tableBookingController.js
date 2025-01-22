@@ -4,7 +4,7 @@ const postUser = async (req  , res) => {
   const { name, email, phone, noOfPeople, noOfTable, date, createdAt } =
     req.body
     const reserve = new Reservation({
-        name, email, phone, noOfPeople, noOfTable, date, createdAt
+        name, email, phone, noOfPeople, noOfTable, date
     })
     try {
         const saveReserve = await reserve.save();
