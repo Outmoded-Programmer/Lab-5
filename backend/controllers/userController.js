@@ -61,7 +61,7 @@ const getUser = async (req, res) => {
       message: "Login successful!",
       jwtToken,
       email,
-      userName: user.userName,
+      userName,
     });
   } catch (error) {
     console.error(error);
@@ -75,7 +75,6 @@ const postUser = async (req, res) => {
   try {
     const { userName, email, password } = req.body;
 
-    // Check if userName or email already exists
     const existingUser = await User.findOne({ $or: [{ userName }, { email }] });
     if (existingUser) {
       return res
@@ -83,7 +82,6 @@ const postUser = async (req, res) => {
         .json({ success: false, message: "User with this email or username already exists!" });
     }
 
-    // Hash the password and save the new user
     const hashedPassword = await Bcrypt.hash(password, 10);
     const newUser = new User({
       userName,

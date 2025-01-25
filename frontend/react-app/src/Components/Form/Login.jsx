@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import Axios from "axios";
+// import Axios from "axios";
 
 const url = "http://localhost:5000/api/v1/user/profile/getUser";
 const Login = () => {
@@ -30,30 +30,42 @@ const Login = () => {
     //     password: getUser.password ,
     // };
 
+    const data = {
+      email : getUser.email ,
+      password: getUser.password
+    }
+ 
     try {
-      const res = await Axios.get(url);
-      const {error , jwtToken , userName } = res ;
-      const details = error.details[0];
+      const res = await fetch(url ,{
+        method : "GET" ,
+        headers:{
+          "Content-Type" : "application/json"
+        },
+        body:JSON.stringify(data)
+
+      });
+      const resData = await res.json()
+      const { jwtToken , userName } = resData ;
+      // const details = error.details[0].message;
       localStorage.setItem('token' , jwtToken);
       localStorage.setItem('loggedIn' , userName);
-      setGetUser(res);
-      if (res.status !== 201) {
-        toast.error("form could not be submitted " , details );
-        return
-      }
+      setGetUser(resData);
+      // if (!res.ok) {
+      //   toast.error("form could not be submitted ");
+      //   return
+      // }
       toast.success("Form submitted");
       setTimeout(()=>{
         navigate('/getUser')
       } , 2000)
-
+      setGetUser({
+        email:"",
+        password:"",
+      })
       console.log(res)
     } catch (error) {
       toast.error("Server Error! Cannot login" , error.message);
     }
-    setGetUser({
-        email:"",
-        password:"",
-      })
   };
 
   return (
