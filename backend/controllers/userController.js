@@ -2,12 +2,7 @@ const User = require("../models/userModel");
 const Bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-// Sign-Up Controller
-// const postUser = async (req, res) => {
-//   try {
-//     const { userName, email, password } = req.body;
 
-//     // Check if the user already exists
 //     const user = await User.findOne({ userName , email });
 //     if (user) {
 //       return res
@@ -49,7 +44,7 @@ const getUser = async (req, res) => {
     }
 
     // Compare the password
-    const isPasswordValid = await Bcrypt.compare(password, user.password);
+    const isPasswordValid = Bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
       return res.status(401).json({ success: false, message: "Wrong Password!" });
     }
