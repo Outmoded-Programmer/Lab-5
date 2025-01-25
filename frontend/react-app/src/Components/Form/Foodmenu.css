@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.main-div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.5em;
+  padding: 5%;
+}
+.food { 
+  max-width: 100%;
+  min-width: 100%;
+}
+.heading {
+  margin-left: 0%;
+}
+.food {
+  border: 1px solid transparent;
+  top: 10%;
+  padding: 0 0 50% 0;
+  max-width: 100%;
+  min-width: 100%;
+  height: 60vh;
+  box-shadow: 4px 4px 4px 4px silver;
+}
+.card-img {
+  margin: 0px;
+  border: 1px solid transparent;
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  padding: 0 0 8px;
+  margin-bottom: 2%;
+}
+.icon {
+  margin-top: 10%;
+  font-size: 50px;
+}
+.card-price {
+  z-index: 10000;
+  border: 1px solid transparent;
+  padding: 10px 8px;
+  height: 15%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+.price-preview h3 {
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+}
+.name {
+  position: relative;
+  padding: 6px 8px;
+  margin: 8px 0px;
+  border: 1px solid transparent;
+  font-size: 18px;
+  height: 15%;
+}
+.addFood-btn {
+    position: relative;
+    width: 10%;
+    margin: 1% 2% 1% 2%;
+    padding: 2% 0%;
+    border-radius: 0px 15px 0px 15px;
+    background-color: #000080;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    overflow: hidden;
+  }
+  .addFood-btn::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: -9990;
+    transition: top 1s ease-in-out;
+  }
+  .addFood-btn:hover::before {
+    top: 0;
+  }
+  .addFood-btn:hover {
+    color: #fff;
+    z-index: 10;
+  }
