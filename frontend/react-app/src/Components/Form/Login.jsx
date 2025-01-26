@@ -118,7 +118,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
-const url = "http://localhost:5000/api/v1/user/profile/login"; // Updated URL for login
+const url = "http://localhost:5000/api/v1/user/login"; // Updated URL for login
 
 const Login = () => {
   const [getUser, setGetUser] = useState({
@@ -151,7 +151,7 @@ const Login = () => {
 
     try {
       const res = await fetch(url, {
-        method: "GET", // Use POST for login
+        method: "POST", // Use POST for login
         headers: {
           "Content-Type": "application/json",
         },

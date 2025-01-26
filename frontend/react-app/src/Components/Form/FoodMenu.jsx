@@ -1,5 +1,3 @@
-// 
-
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -80,8 +78,8 @@ const FoodMenu = () => {
       <div className="main-div">
         {getApi.map((food) => (
           <div className="food text-center border align-center" key={food._id}>
-            <h2 className="name">{food.name}</h2>
             <img className="card-img" src={food.image} alt="" />
+            <h2 className="name">{food.name}</h2>
             <p className="card-price">Rs.{food.price}</p>
             <button className="addFood-btn" onClick={() => deleteBtn(food._id)}>
               <MdDeleteForever />
