@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
-const { isStrongPassword } = require('validator');
 
 const userSchema = new mongoose.Schema({
-    userName:{
+    name:{
         type:String,
         require:true,
-        unique:true
     },
     email:{
         type:String,
@@ -15,14 +13,9 @@ const userSchema = new mongoose.Schema({
     password:{
         type: String,
         require:true,
-        validate: function(value){
-           return isStrongPassword(value);
-        },
-        message:"Password is not strong enough", 
     },
     role:{
         type: String,
-        enum:['admin' , 'user'] ,
         default: 'user' ,
     }
 })

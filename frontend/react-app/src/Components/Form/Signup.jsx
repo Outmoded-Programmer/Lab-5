@@ -4,40 +4,15 @@ import { ToastContainer, toast } from "react-toastify";
 
 const url = "http://localhost:5000/api/v1/user/profile/addUser";
 const Signup = () => {
-  //   const [ postUser, setPostUser] = useState({
-  //     userName: "",
-  //     email: "",
-  //     password: "",
-  //   });
-  //   const handleChange = (event) => {
-  //     const { name, value } = event.target;
-  //     setPostUser((prevUser) => ({
-  //       ...prevUser,
-  //       [name]: value,
-  //     }));
-  //   };
-  //   const handleSubmit = async (e) => {
-  //     e.preventDefault();
-  //     if (!postUser.userName || !postUser.email || !postUser.password) {
-  //       console.log("All fields are required");
-  //       toast.error("All field are required");
-  //       return;
-  //     }
-  //     // const data = {
-  //     //     userName : getUser.userName,
-  //     //     email: getUser.email ,
-  //     //     password: getUser.password ,
-  //     // };
+
+
 
   //     try {
   //       const res = await Axios.post(url, postUser);
   //       const {error} = res ;
   //       const details = error?.details[0].message;
   //       setPostUser(res);
-  //       if (res.status !== 201) {
-  //         toast.error("form could not be submitted " , details );
-  //         return
-  //       }
+
   //       toast.success("Form submitted");
   //       setTimeout(()=>{
   //         navigate('/getUser')
@@ -55,7 +30,7 @@ const Signup = () => {
   //   };
 
   const [postUser, setPostUser] = useState({
-    userName: "",
+    name: "",
     email: "",
     password: "",
   });
@@ -70,11 +45,11 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-      userName: postUser.userName,
+      name: postUser.name,
       email: postUser.email,
       password: postUser.password,
     };
-    if (!postUser.userName || !postUser.email || !postUser.password) {
+    if (!postUser.name || !postUser.email || !postUser.password) {
       toast.error("All fields needs to be filled");
       return;
     }
@@ -109,7 +84,7 @@ const Signup = () => {
     }
     console.log(postUser);
     setPostUser({
-      userName: "",
+      name: "",
       email: "",
       password: "",
     });
@@ -118,14 +93,14 @@ const Signup = () => {
     <>
       <h1>Sign Up</h1>
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="userName">Name</label>
+        <label htmlFor="name">Name</label>
         <input
           type="text"
           autoFocus
-          name="userName"
+          name="name"
           placeholder="Enter your name"
           onChange={handleChange}
-          value={postUser.userName}
+          value={postUser.name}
         />
         <label htmlFor="email">Email</label>
         <input
@@ -156,25 +131,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       // Submit the form
-//       const res = await Axios.post(url, getUser);
-
-//       // Check response status
-//       if (res.status === 201) {
-//         toast.success("Form submitted successfully!");
-//         console.log("Response:", res.data);
-//       } else {
-//         throw new Error("Form submission failed");
-//       }
-//     } catch (error) {
-//       toast.error("Server Error! Cannot sign up");
-//     }
-//   };
-
-//   return (
-//     <>
