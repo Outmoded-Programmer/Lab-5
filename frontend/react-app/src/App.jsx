@@ -1,3 +1,4 @@
+import Hero from "./Components/Body/Hero";
 import FoodMenu from "./Components/Form/FoodMenu";
 import FoodPost from "./Components/Form/FoodPost";
 import Login from "./Components/Form/Login";
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
       <NavBar/>
         <Routes>
+        <Route path="/" element={<Hero />} />
           <Route path="/foodMenu" element={<FoodMenu />} />
           <Route path="/addfood" element={<FoodPost />} />
           {/* <Route path="/addReservation" element={<Registration/>}/> */}
