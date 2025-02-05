@@ -5,6 +5,10 @@ const categorySchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  image:{
+    type:String ,
+    require:true ,
+  },
   food: [
     {
       type: mongoose.Schema.Types.ObjectId,
