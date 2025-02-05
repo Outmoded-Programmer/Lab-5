@@ -3,8 +3,8 @@ const Food = require('../models/foodModel.js');
 
 //enter the category 
 const addCategory = async (req , res )=>{
-    const {name , food } = req.body ;
-    const category = new Category({name , food});
+    const {name, image , food } = req.body ;
+    const category = new Category({name ,image, food});
     try{
         const saveCategory = await category.save();
         res.status(201).json({success: true , data: saveCategory});
@@ -29,9 +29,9 @@ const getCategory = async (req , res)=>{
 
 const updateCategory = async (req , res )=>{
     const {id} = req.params ;
-    const{name , foods} = req.body;
+    const{name ,image, foods} = req.body;
     try{
-    const updateCategory = await Category.findByIdAndUpdate(id , {name  , foods} , {new :true}) ;
+    const updateCategory = await Category.findByIdAndUpdate(id , {name , image , foods} , {new :true}) ;
         if(!updateCategory){
             res.status(404).json({success:false  , message: "Category  not found"});
         }
