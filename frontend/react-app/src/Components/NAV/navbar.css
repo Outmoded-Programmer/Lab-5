@@ -5,7 +5,7 @@
 }
 .main-nav{
     width: 100%;
-    position: fixed;
+    position: absolute;
     background-color: rgba( 0, 31, 63, 0.5);
     align-items: center;
     z-index: 1;
