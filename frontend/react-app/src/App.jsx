@@ -1,4 +1,3 @@
-import Hero from "./Components/Body/Hero";
 import FoodMenu from "./Components/Form/FoodMenu";
 import FoodPost from "./Components/Form/FoodPost";
 import Login from "./Components/Form/Login";
@@ -6,6 +5,7 @@ import Signup from "./Components/Form/Signup";
 // import Registration from "./Components/Form/Registration";
 import NavBar from "./Components/NAV/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
       <NavBar/>
         <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Home />} />
           <Route path="/foodMenu" element={<FoodMenu />} />
           <Route path="/addfood" element={<FoodPost />} />
           {/* <Route path="/addReservation" element={<Registration/>}/> */}
