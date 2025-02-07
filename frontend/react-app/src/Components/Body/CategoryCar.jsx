@@ -24,7 +24,7 @@ const CategoryCar = () => {
       <div className="category container top-100 w-100">
         <div className="category-card text-center">
           <h2 className="pt-5 cart-title">Category</h2>
-          <div className="row justify-content-center g-1">
+          <div className="row justify-content-center g-4 ms-5 ps-5">
             {setApi.map((category, index) => (
               <div
                 className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex"
