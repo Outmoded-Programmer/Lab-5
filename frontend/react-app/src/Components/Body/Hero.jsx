@@ -1,5 +1,6 @@
 import React from 'react'
 import "./body.css"
+import "bootstrap/dist/css/bootstrap.min.css";
 const Hero = () => {
   return (
     <>

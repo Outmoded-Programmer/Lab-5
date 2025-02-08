@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./FoodPost.css";
 import { ToastContainer, toast } from "react-toastify";
 import { BiImageAdd } from "react-icons/bi";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const url = "http://localhost:5000/api/v1/food/addFood";
 const FoodPost = () => {

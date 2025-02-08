@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./body.css";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const url = "http://localhost:5000/api/v1/category/getCategory";
 const CategoryCar = () => {
   const [setApi, getSetApi] = useState([]);
