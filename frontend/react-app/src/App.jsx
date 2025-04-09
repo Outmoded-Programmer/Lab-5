@@ -28,3 +28,7 @@ function App() {
 }
 
 export default App;
+
+// Git lab - 5
+int addtion = 10 + 5;
+Console.WriteLine("Addition" + addition);
